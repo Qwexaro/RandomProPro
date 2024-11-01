@@ -6,11 +6,33 @@ namespace RandomProPro
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 50; i++) Console.Write("#");
-            Console.WriteLine("\nВведи ка число: ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            int rand_num = (num + 7932) * 5 % 123;
-            Console.WriteLine("Рандомно преисполненное: " + rand_num);
+            int input = 10000;
+            int random_num = new Random().Next(100);
+            do
+            {
+                Console.WriteLine("Введи число или сдайся отправив -1: ");
+                input = Convert.ToInt32(Console.ReadLine());
+
+                if (input == random_num) Console.WriteLine("Это оно!");
+                
+                if (input == -1)
+                {
+                    Console.WriteLine("Ответом было: " + random_num);
+                    random_num = input;
+                }
+                if (input < random_num)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Число должно быть больше");
+                }
+
+                if (input > random_num)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Число должно быть меньше");
+                }
+            } 
+            while (input != random_num);
         }
     }
     
