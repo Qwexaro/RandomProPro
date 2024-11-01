@@ -6,7 +6,12 @@ namespace RandomProPro
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            for (int i = 0; i < 50; i++) Console.Write("#");
+            Console.WriteLine("\nВведи ка число: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int rand_num = (num + 7932) * 5 % 123;
+            Console.WriteLine("Рандомно преисполненное: " + rand_num);
         }
     }
+    
 }
